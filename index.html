@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    
     <script type="text/javascript" src="utility.js"></script>
     <script type="text/javascript" src="person.js"></script>
     <script type="text/javascript" src="personView.js"></script>
@@ -13,48 +13,48 @@
 </head>
 <body>
     <div id="person">
-        <div id="edit_page">
-            <div id="edit_content">
-                <div id="tabs">
-                    <div id="tab_name" class="tab_caption">Name</div>
-                    <div id="tab_contacts" class="tab_caption">Contacts</div>
-                    <div id="tab_personal" class="tab_caption">Personal</div>
+        <div class="edit_page">
+            <div class="edit_content">
+                <div class="tabs">
+                    <div class="tab_name tab_caption">Name</div>
+                    <div class="tab_contacts tab_caption">Contacts</div>
+                    <div class="tab_personal tab_caption">Personal</div>
                 </div>
 
-                <div id="tabs_content">
-                    <div id="tab_name_content" class="tab_content">
-                        <legend for="name_field">Name</legend><input type="text" id="edit_name_field" class="edit_field">
-                        <legend for="last_name_field">Last Name</legend><input type="text" id="edit_last_name_field" class="edit_field">
+                <div class="tabs_content">
+                    <div class="tab_name_content tab_content">
+                        <legend>Name</legend><input type="text" class="edit_name_field edit_field">
+                        <legend>Last Name</legend><input type="text" class="edit_last_name_field edit_field">
                     </div>
 
-                    <div id="tab_contacts_content" class="tab_content">
-                        <legend for="skype_field">Skype</legend><input type="text" id="edit_skype_field" class="edit_field">
-                        <legend for="email_field">Email</legend><input type="text" id="edit_email_field" class="edit_field">
-                        <legend for="phone_field">Phone</legend><input type="text" id="edit_phone_field" class="edit_field">
+                    <div class="tab_contacts_content tab_content">
+                        <legend>Skype</legend><input type="text" class="edit_skype_field edit_field">
+                        <legend>Email</legend><input type="text" class="edit_email_field edit_field">
+                        <legend>Phone</legend><input type="text" class="edit_phone_field edit_field">
                     </div>
 
-                    <div id="tab_personal_content" class="tab_content">
-                        <legend for="age_field">Age</legend><input type="text" id="edit_age_field" class="edit_field">
-                        <legend for="sex_field">Sex</legend><input type="text" id="edit_sex_field" class="edit_field">
+                    <div class="tab_personal_content tab_content">
+                        <legend>Age</legend><input type="text" class="edit_age_field edit_field">
+                        <legend>Sex</legend><input type="text" class="edit_sex_field edit_field">
                     </div>
                 </div>
             </div>
 
-            <div class="controll"><span id="btn_preview">Preview</span></div>
+            <div class="controll"><span class="btn_preview">Preview</span></div>
         </div>
 
-        <div id="preview_page">
-            <div id="preview_content">
-                <legend for="name_field">Name: </legend><div id="preview_name_field" class="preview_field"></div>
-                <legend for="last_name_field">Last Name: </legend><div id="preview_last_name_field" class="preview_field"></div>
-                <legend for="skype_field">Skype: </legend><div id="preview_skype_field" class="preview_field"></div>
-                <legend for="email_field">Email: </legend><div id="preview_email_field" class="preview_field"></div>
-                <legend for="phone_field">Phone: </legend><div id="preview_phone_field" class="preview_field"></div>
-                <legend for="age_field">Age: </legend><div id="preview_age_field" class="preview_field"></div>
-                <legend for="sex_field">Sex: </legend><div id="preview_sex_field" class="preview_field"></div>
+        <div class="preview_page">
+            <div class="preview_content">
+                <legend>Name: </legend><div class="preview_name_field preview_field"></div>
+                <legend>Last Name: </legend><div class="preview_last_name_field preview_field"></div>
+                <legend>Skype: </legend><div class="preview_skype_field preview_field"></div>
+                <legend>Email: </legend><div class="preview_email_field preview_field"></div>
+                <legend>Phone: </legend><div class="preview_phone_field preview_field"></div>
+                <legend>Age: </legend><div class="preview_age_field preview_field"></div>
+                <legend>Sex: </legend><div class="preview_sex_field preview_field"></div>
             </div>
 
-            <div class="controll"><span id="btn_edit">Edit</span></div>
+            <div class="controll"><span class="btn_edit">Edit</span></div>
         </div>
     </div>
 </body>

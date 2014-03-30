@@ -1,25 +1,25 @@
-#edit_page, #preview_page{
+.edit_page, .preview_page{
     width: 258px;
 }
 
-#edit_content{
+.edit_content{
     clear: both;
     position: relative;
     overflow: hidden;
 }
 
-#tabs, #tabs_content{
+.tabs, .tabs_content{
     float: left;
     position: relative;
     overflow: hidden;
 }
 
-#tabs_content{
+.tabs_content{
     padding: 0 5px;
     width: 186px;
 }
 
-#tab_contacts_content, #tab_personal_content, #preview_page{
+.tab_contacts_content, .tab_personal_content, .preview_page{
     display: none;
 }
 
@@ -28,7 +28,7 @@
     padding: 0 2px;
 }
 
-#preview_content legend{
+.preview_content legend{
     float: left;
     width: 80px;
 }
@@ -46,16 +46,16 @@
     height: 44px;
 }
 
-#tabs_content{
+.tabs_content{
     border: 1px solid black;
     height: 136px;
 }
 
-#btn_preview, #btn_edit{
+.btn_preview, .btn_edit{
     float: right;
 }
 
-#tab_name{
+.tab_name{
     text-decoration: underline;
 }
 

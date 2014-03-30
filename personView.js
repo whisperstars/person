@@ -1,29 +1,30 @@
-function PersonView(person) {
+function PersonView(elem, person) {
     var eventHandler = function() {
-            var btn_preview = document.getElementById('btn_preview'),
-                btn_edit = document.getElementById('btn_edit'),
+            var btn_preview = elem.getElementsByClassName('btn_preview')[0],
+                btn_edit = elem.getElementsByClassName('btn_edit')[0],
 
-                name_tab = document.getElementById('name_tab'),
-                contact_tab = document.getElementById('contact_tab'),
-                personal_tab = document.getElementById('personal_tab'),
+                name_tab = elem.getElementsByClassName('tab_name')[0],
+                contacts_tab = elem.getElementsByClassName('tab_contacts')[0],
+                personal_tab = elem.getElementsByClassName('tab_personal')[0],
+
                 active_tab_name = 'name',
                 inputs = {'name': ['name', 'last_name'],
                             'contacts': ['skype', 'email', 'phone'],
                             'personal': ['age', 'sex']
                         },
-                
+
                 showTabContent = function(name) {
                     var i,
-                        tab_captions = document.getElementsByClassName('tab_caption');
+                        tab_captions = elem.getElementsByClassName('tab_caption');
 
-                    document.getElementById('tab_' + active_tab_name).style.textDecoration = 'none';
-                    document.getElementById('tab_' + active_tab_name + '_content').style.display = 'none';
+                    elem.getElementsByClassName('tab_' + active_tab_name)[0].style.textDecoration = 'none';
+                    elem.getElementsByClassName('tab_' + active_tab_name + '_content')[0].style.display = 'none';
 
-                    document.getElementById('tab_' + name).style.textDecoration = 'underline';
-                    document.getElementById('tab_' + name + '_content').style.display = 'block';
+                    elem.getElementsByClassName('tab_' + name)[0].style.textDecoration = 'underline';
+                    elem.getElementsByClassName('tab_' + name + '_content')[0].style.display = 'block';
 
                     for(i=0; i < inputs[active_tab_name].length; i++) {
-                        person.set(inputs[active_tab_name][i], document.getElementById('edit_' + inputs[active_tab_name][i] + '_field').value);
+                        person.set(inputs[active_tab_name][i], elem.getElementsByClassName('edit_' + inputs[active_tab_name][i] + '_field')[0].value);
                     }
 
                     active_tab_name = name;
@@ -32,22 +33,22 @@ function PersonView(person) {
 
                 showPage = function(name) {
                     for(i=0; i < inputs[active_tab_name].length; i++) {
-                        person.set(inputs[active_tab_name][i], document.getElementById('edit_' + inputs[active_tab_name][i] + '_field').value);
+                        person.set(inputs[active_tab_name][i], elem.getElementsByClassName('edit_' + inputs[active_tab_name][i] + '_field')[0].value);
                     }
 
                     this.update();
 
-                    document.getElementById('preview_page').style.display = 'none';
-                    document.getElementById('edit_page').style.display = 'none';
-                    document.getElementById(name + '_page').style.display = 'block';
+                    elem.getElementsByClassName('preview_page')[0].style.display = 'none';
+                    elem.getElementsByClassName('edit_page')[0].style.display = 'none';
+                    elem.getElementsByClassName(name + '_page')[0].style.display = 'block';
                 };
 
             addEvent(btn_preview, 'click', showPage.bind(this, 'preview'));
             addEvent(btn_edit, 'click', showPage.bind(this, 'edit'));
 
-            addEvent(tab_name, 'click', showTabContent.bind(this, 'name'));
-            addEvent(tab_contacts, 'click', showTabContent.bind(this, 'contacts'));
-            addEvent(tab_personal, 'click', showTabContent.bind(this, 'personal'));
+            addEvent(name_tab, 'click', showTabContent.bind(this, 'name'));
+            addEvent(contacts_tab, 'click', showTabContent.bind(this, 'contacts'));
+            addEvent(personal_tab, 'click', showTabContent.bind(this, 'personal'));
         }.bind(this),
 
         start = function() {
@@ -57,11 +58,11 @@ function PersonView(person) {
     this.update = function() {
         for(property in person.toJSON()) {
             if(person.toJSON()[property] !== '') {
-                document.getElementById('edit_' + property + '_field').value = person.toJSON()[property];
-                document.getElementById('preview_' + property + '_field').innerHTML = person.toJSON()[property];
+                elem.getElementsByClassName('edit_' + property + '_field')[0].value = person.toJSON()[property];
+                elem.getElementsByClassName('preview_' + property + '_field')[0].innerHTML = person.toJSON()[property];
             } else {
-                document.getElementById('edit_' + property + '_field').value = 'none';
-                document.getElementById('preview_' + property + '_field').innerHTML = 'none';
+                elem.getElementsByClassName('edit_' + property + '_field')[0].value = 'none';
+                elem.getElementsByClassName('preview_' + property + '_field')[0].innerHTML = 'none';
             }
         }
 

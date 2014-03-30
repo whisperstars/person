@@ -1,9 +1,13 @@
-function addEvent(e, type, handler) {
-    if (e.addEventListener) {
-        e.addEventListener(type, handler, false);
-    } else {
-        e.attachEvent("on"+type, handler);
-    }
+var addEvent = null;
+
+if(window.addEventListener) {
+    addEvent = function(elem, type, handler) {
+        elem.addEventListener(type, handler, false);
+    };
+} else {
+    addEvent = function(elem, type, handler) {
+        elem.attachEvent("on"+type, handler);
+    };
 }
 
 function stopDefault(e) {

@@ -1,7 +1,7 @@
 
 addEvent(window, 'load', function() {
     var person = new Person(),
-        person_view = new PersonView(person);
+        person_view = new PersonView(document.getElementById('person'), person);
     person.bulkSet({
             'name': 'Andrey',
             'last_name': 'Granat',
